@@ -58,10 +58,10 @@ while True:
 	#time.sleep(1)
 	#print ("tick")
 	for c in ser.read():
-    seq.append(c)
-    joined_seq = ''.join(str(v) for v in seq) #Make a string from array
+		seq.append(c)
+		joined_seq = ''.join(str(v) for v in seq) #Make a string from array
     
-    if c is 'W': #Welcome to...
+		if c is 'W': #Welcome to...
 			break
 		if c is '#': #end of uart frame
 			print(joined_seq)
@@ -69,7 +69,7 @@ while True:
 			if len(split_seq) > 7: # frame length with data
 				print("[+] id: " + split_seq[3])
 
-        seq = []
+        			seq = []
 				topic = "agrita/" + split_seq[3] + "/out"
 
 				PUB(topic, joined_seq)
@@ -80,4 +80,4 @@ while True:
 				seq = []
 				print("[p] mqtt: agrita/stt")
 
-        break
+        			break
