@@ -6,7 +6,7 @@ Date: Sep 6, 2016
 Author: sangseu
 
 
-1. Setup Raspbian OS
++ Setup Raspbian OS
 
 OS: Jessie lite
 SSH:
@@ -15,7 +15,7 @@ $ ssh pi@IP
 
 $ sudo apt-get update
 
-2. Install pip
++ Install pip
 
 Download:
 
@@ -25,15 +25,15 @@ Install:
 
 $ sudo python get-pip.py
 
-3. Install pySerial
++ Install pySerial
 
 $ sudo python -m pip install pyserial
 
-4. Install paho-mqtt
++ Install paho-mqtt
 
 $ sudo pip install paho-mqtt
 
-5. Code ...
++ Code ...
 
 
 
