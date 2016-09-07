@@ -9,24 +9,24 @@ print("[+] UART ready")
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
-    print("[+] rc: "+str(rc))
+	print("[+] rc: "+str(rc))
 
-    # Subscribing in on_connect() means that if we lose the connection and
-    # reconnect then subscriptions will be renewed.
-    client.publish("agrita/stt", "pi_connected", qos=0, retain=False)
-    client.subscribe("agrita/+/in")
+	# Subscribing in on_connect() means that if we lose the connection and
+	# reconnect then subscriptions will be renewed.
+	client.publish("agrita/stt", "pi_connected", qos=0, retain=False)
+	client.subscribe("agrita/+/in")
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    msg_print = "[r] " + str(msg.payload)
-    print(msg_print)
-    split_topic = str(msg.topic).split("/")
-    if len(split_topic)==3:
+	msg_print = "[r] " + str(msg.payload)
+	print(msg_print)
+	split_topic = str(msg.topic).split("/")
+	if len(split_topic)==3:
 	#print(split_topic[2])
 	if split_topic[2] == "in":
-	  print("[t] uart: " + str(msg.payload))
-	  ctrl = str(msg.payload) + "\r\n"
-	  ser.write(ctrl)
+		print("[t] uart: " + str(msg.payload))
+		ctrl = str(msg.payload) + "\r\n"
+		ser.write(ctrl)
     
 
 # mqtt
@@ -43,7 +43,7 @@ client.connect("128.199.139.40", 1883, 60)
 # print("[+] UART ready")
 
 def PUB(topic, data):
-    client.publish( topic, data, qos=0, retain=False)	
+	client.publish( topic, data, qos=0, retain=False)	
 
 # this will store the uart frame
 seq = []
