@@ -1,6 +1,6 @@
 # Pi-uart-to-mqtt
 
-Pi: Transfer date from UART to MQTT
+Pi: Transfer data from UART to MQTT
 
 Date: Sep 6, 2016
 Author: sangseu
